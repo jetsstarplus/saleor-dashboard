@@ -3,7 +3,9 @@ WORKDIR /app
 COPY package*.json ./
 COPY scripts/patchReactVirtualized.js scripts/
 ENV CI 1
-RUN npm ci --legacy-peer-deps
+RUN npm i
+
+# RUN npm ci --legacy-peer-deps
 
 COPY nginx/ nginx/
 COPY assets/ assets/
